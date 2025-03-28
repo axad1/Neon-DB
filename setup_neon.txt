@@ -1,0 +1,9 @@
+Custom type or Plain text sql file
+- pg_dump -h localhost --no-owner --no-privileges --no-publications --no-subscriptions --no-tablespaces --no-comments -Fc -v -d "<db-name>" -f "<binary-file-name.bak>"
+- pg_restore --no-owner --no-privileges -v -d "<postgres connection string>" "<binary-file-name>"
+
+----------------------------------------------
+Binary file type smaller in size
+- pg_dump -h localhost --no-owner --no-privileges --no-publications --no-subscriptions --no-tablespaces --no-comments -v -d "<db-name>" -f "<file-name.sql>"
+- Comment line that includes: SET transaction_timeout = 0;
+- psql -d <postgres connection string> -f <file-name.sql>
